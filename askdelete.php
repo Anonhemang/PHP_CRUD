@@ -18,7 +18,7 @@ $i = $_GET['i'];
       echo "<script>alert('Your Record Has Been Deleted')</script>";   
     
     ?>
-    <meta http-equiv="refresh" content="0; url=http://localhost/poojainfotech/show.php">
+    <meta http-equiv="refresh" content="0; url=http://localhost/PHP_CRUD/show.php">
 
   <?php
     }

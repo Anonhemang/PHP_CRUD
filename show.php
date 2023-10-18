@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        * {
             margin: 0;
         }
+
         table {
             width: 100%;
             height: auto;
-            border-collapse:separate;
+            border-collapse: separate;
             margin: 0;
-           
+
         }
 
         th {
@@ -34,11 +35,12 @@
             width: 55%;
             border-radius: 5px;
             padding: 8px;
-            
+
         }
-        a{
+
+        a {
             text-decoration: none;
-            color:black;
+            color: black;
             text-align: center;
         }
     </style>
@@ -77,15 +79,18 @@
 
                     <tr>
                         <td><?php echo $row['id'] ?></td>
-                        <td><?php echo $row['name'] ?></td>
+                        <td><?php echo $row['namee'] ?></td>
                         <td><?php echo $row['email'] ?></td>
                         <td><?php echo $row['contact'] ?></td>
                         <td><?php echo $row['query'] ?></td>
 
                         <input type="hidden" name="del_id" class="del_id">
                         <td>
-                            <button type="submit" name="edit_btn" class="edit_btn">Edit</button>
-                            <?php echo "<button class='del_btn'><a href='askdelete.php? i=$row[id]' onclick='return checkdelet()'>Delete</a></button";?>
+                            <form action="edit.php" method="post">
+                                <input type="hidden" value="<?php echo $row['id'] ?>" name="edit_ids">
+                                <button type="submit" name="edit_btn">Edit</button>
+                            </form>
+                            <?php echo "<button class='del_btn'><a href='askdelete.php? i=$row[id]' onclick='return checkdelet()'>Delete</a></button"; ?>
                         </td>
                     </tr>
             <?php
@@ -95,12 +100,12 @@
             }
             ?>
         </table>
-<script>
-    // popup confirmation for deleting records
-    function checkdelet(){
-        return confirm('Are you sure to delete this data?');
-    }
-</script>
+        <script>
+            // popup confirmation for deleting records
+            function checkdelet() {
+                return confirm('Are you sure to delete this data?');
+            }
+        </script>
     </form>
 </body>
 

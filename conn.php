@@ -7,7 +7,7 @@ $dbname = "pooja";
 
 $conn = mysqli_connect($username,$server, $pass, $dbname);
 if($conn){
-    //echo "Connected";
+    echo "Connected";
 }
 else{
     echo "error";
